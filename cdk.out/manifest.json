@@ -1,0 +1,131 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "s3-lambda.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "s3-lambda.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "s3-lambda": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "s3-lambda.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/45ad00da4b0379b62836433779247046e608ed99fdb2e62bb5c3568c0d7afcb6.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "s3-lambda.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "s3-lambda.assets"
+      ],
+      "metadata": {
+        "/s3-lambda/testS3/testcdk-s3-notifications-lambda-target/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3testcdks3notificationslambdatarget25B7E992"
+          }
+        ],
+        "/s3-lambda/testS3/LambdaIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3LambdaIAMRoleBD957549"
+          }
+        ],
+        "/s3-lambda/testS3/HelloLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3HelloLambda3D1CF8A5"
+          }
+        ],
+        "/s3-lambda/testS3/testcdk-s3-notifications-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3testcdks3notificationslambdaA5A81506"
+          }
+        ],
+        "/s3-lambda/testS3/testcdk-s3-notifications-lambda/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3testcdks3notificationslambdaNotificationsE7148C59"
+          }
+        ],
+        "/s3-lambda/testS3/testcdk-s3-notifications-lambda/AllowBucketNotificationsTos3lambdatestS3HelloLambda6CB8C77C": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3testcdks3notificationslambdaAllowBucketNotificationsTos3lambdatestS3HelloLambda6CB8C77C912E22AB"
+          }
+        ],
+        "/s3-lambda/testS3/s3-bucket-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testS3s3bucketpolicyC90293AD"
+          }
+        ],
+        "/s3-lambda/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
+          }
+        ],
+        "/s3-lambda/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36"
+          }
+        ],
+        "/s3-lambda/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691"
+          }
+        ],
+        "/s3-lambda/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/s3-lambda/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/s3-lambda/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/s3-lambda/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "s3-lambda"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
